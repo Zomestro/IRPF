@@ -1,0 +1,61 @@
+/* Ajustes de Tipografia e Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita scroll horizontal em celulares */
+}
+
+/* Animação do Prazo Final com Amarelo Vibrante */
+@keyframes blinking {
+    0%, 49% { 
+        color: #ffffff !important; 
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); 
+    }
+    50%, 100% { 
+        color: #eeff00 !important; 
+        text-shadow: 0 0 20px rgba(238, 255, 0, 1); 
+    }
+}
+
+.blinking-text {
+    animation: blinking 1.5s infinite;
+    font-family: sans-serif; /* Garante uma fonte de impacto */
+    letter-spacing: -2px;
+}
+
+/* Tabelas Responsivas (Caso use tabelas no futuro) */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 500px; /* Garante que a tabela não esmague */
+}
+
+/* Ajustes de Imagens */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Customização de scrollbar para navegadores modernos */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #001f3f;
+}
+::-webkit-scrollbar-thumb {
+    background: #00d4ff;
+    border-radius: 10px;
+}
