@@ -1,0 +1,284 @@
+/* Ajustes de Tipografia e Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita scroll horizontal em celulares */
+}
+
+/* Animação do Prazo Final com Amarelo Vibrante */
+@keyframes blinking {
+    0%, 49% { 
+        color: #ffffff !important; 
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); 
+    }
+    50%, 100% { 
+        color: #eeff00 !important; 
+        text-shadow: 0 0 20px rgba(238, 255, 0, 1); 
+    }
+}
+
+.blinking-text {
+    animation: blinking 1.5s infinite;
+    font-family: sans-serif; /* Garante uma fonte de impacto */
+    letter-spacing: -2px;
+}
+
+/* Tabelas Responsivas (Caso use tabelas no futuro) */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 500px; /* Garante que a tabela não esmague */
+}
+
+/* Ajustes de Imagens */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Customização de scrollbar para navegadores modernos */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #001f3f;
+}
+::-webkit-scrollbar-thumb {
+    background: #00d4ff;
+    border-radius: 10px;
+}
+/* Estilização para o Box Azul Compacto */
+    .link-box-container {
+        text-align: center; /* Centraliza o box na página */
+        margin-bottom: 5rem; /* Espaçamento para a seção de baixo */
+    }
+
+   .link-box {
+    background-color: #001f3f; /* azul escuro */
+    text-align: center;
+    padding: 20px;
+    margin: 30px auto;
+    border-radius: 8px;
+    max-width: 600px; /* largura controlada */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+
+
+/* BOTÃO DEFINITIVO DA PÁGINA 2 */
+.link-box a {
+  font-size: 1.3rem !important;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Ajuste extra para celular */
+@media (max-width: 768px) {
+  .link-box a {
+    font-size: 2.6rem !important;
+  }
+}
+
+/* =====================================
+   ANIMAÇÕES OFICIAIS DO SITE
+   ===================================== */
+
+/* 🔵 Piscar branco — padrão */
+@keyframes blink-white {
+  0%, 50%, 100% {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  }
+  25%, 75% {
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+  }
+}
+
+/* 🟡 Piscar amarelo — data limite */
+@keyframes blink-yellow {
+  0%, 50%, 100% {
+    color: #eeff00;
+    text-shadow: 0 0 8px rgba(238, 255, 0, 0.6);
+  }
+  25%, 75% {
+    color: #eeff00;
+    text-shadow: 0 0 20px rgba(238, 255, 0, 1);
+  }
+}
+
+/* Padrão do site */
+.blinking-text {
+  animation: blink-white 1.5s infinite;
+  color: #ffffff;
+}
+
+/* Exceção: prazo final */
+.prazo-final {
+  animation: blink-yellow 1.5s infinite;
+  color: #eeff00;
+}
+
+/* Botão do link da página 2 */
+.link-box a {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-decoration: none;
+  color: #ffffff;
+  display: inline-block;
+}
+
+/* =====================================
+   ANIMAÇÕES PADRÃO DO SITE
+   ===================================== */
+
+/* 🔵 Piscar em BRANCO (padrão do site) */
+@keyframes blink-white {
+  0%, 50%, 100% {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  }
+  25%, 75% {
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+  }
+}
+
+/* 🟡 Piscar em AMARELO (data limite) */
+@keyframes blink-yellow {
+  0%, 50%, 100% {
+    color: #eeff00;
+    text-shadow: 0 0 8px rgba(238, 255, 0, 0.6);
+  }
+  25%, 75% {
+    color: #eeff00;
+    text-shadow: 0 0 20px rgba(238, 255, 0, 1);
+  }
+}
+/* =========================================
+   FORÇA BOTÃO DO LINK EM BRANCO (DEFINITIVO)
+   ========================================= */
+
+/* Mesmo com blinking-text e !important do HTML */
+.link-box a.blinking-text {
+  animation: blink-white 1.5s infinite !important;
+  color: #ffffff !important;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.9) !important;
+}
+/* =====================================
+   CONTADOR REGRESSIVO – AJUSTE VISUAL
+   ===================================== */
+
+.countdown-wrapper {
+  margin: 16px 0 8px;
+}
+
+/* Palavra "Faltam" */
+.countdown-prefix {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #cbd5f5;
+  font-weight: 600;
+}
+
+.countdown-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;        /* ✅ NÃO quebra linha */
+  overflow-x: auto;         /* ✅ segurança para telas muito pequenas */
+
+}
+
+/* Cada quadro */
+.time-box {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 10px 12px;
+  min-width: 78px;
+  text-align: center;
+}
+
+/* Número */
+.time-number {
+  display: block;
+  font-size: 1.9rem;   /* 🔽 AJUSTE DE TAMANHO */
+  font-weight: 800;
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+/* Label */
+.time-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #cbd5f5;
+}
+
+/* 🔴 Modo alerta (7 dias ou menos) */
+.countdown-danger .time-number {
+  color: #ff2d2d;
+}
+/* Prefixo inline do contador */
+.countdown-prefix-inline {
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #cbd5f5;
+  margin-right: 10px;
+}
+.btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #0d2a4a;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.btn-voltar:hover {
+  opacity: 0.9;
+}
+.card {
+  background: var(--cinza);
+  border-left: 6px solid var(--azul);
+  padding: 25px;
+  border-radius: 12px;
+
+  max-width: 720px;     /* ✅ largura controlada */
+  margin: 40px auto;    /* ✅ centraliza horizontalmente */
+}
+
+@media (min-width: 1024px) {
+  .card {
+    max-width: 680px;
+  }
+}

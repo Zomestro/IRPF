@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Obrigatoriedade IRPF 2026</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root{ --azul:#0d2a4a; --texto:#1c1f23; --cinza:#eef2f7; }
+    body{ font-family: 'Inter', sans-serif; color: var(--texto); }
+       .btn-voltar {
+        display: inline-flex; align-items: center; gap: 8px;
+        background: var(--azul); color: white; padding: 12px 24px;
+        border-radius: 8px; text-decoration: none; font-weight: 600;
+        margin-bottom: 20px; transition: opacity 0.2s;
+    }
+    .btn-voltar:hover { opacity: 0.9; }
+    .valor { font-weight: 700; color: #1e40af; }
+    footer{ margin-top: 40px; padding: 20px; border-top: 1px solid #e2e8f0; text-align: center; color: #64748b; font-size: 0.875rem; }
+  </style>
+</head>
+<body>
+     <header class="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-[#0f172a] text-white px-6">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-transparent"></div>
+            <div class="grid grid-cols-4 md:grid-cols-8 h-full w-full">
+                <div class="border-r border-white/5 h-full"></div><div class="border-r border-white/5 h-full"></div>
+                <div class="border-r border-white/5 h-full"></div><div class="border-r border-white/5 h-full"></div>
+                <div class="border-r border-white/5 h-full md:block hidden"></div><div class="border-r border-white/5 h-full md:block hidden"></div>
+                <div class="border-r border-white/5 h-full md:block hidden"></div><div class="border-r border-white/5 h-full md:block hidden"></div>
+            </div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl w-full text-center space-y-5 pb-24">
+            <span class="inline-block px-4 py-1.5 bg-blue-500/10 border border-blue-400/20 text-blue-300 rounded-full text-sm md:text-lg font-medium tracking-wide uppercase mb-4">
+                Temporada de Ajuste Anual
+            </span>
+            <h2 class="text-lg md:text-2xl font-light tracking-[0.2em] text-gray-400 uppercase">Declaração de Imposto de Renda 2026</h2>
+            <h1 class="text-4xl md:text-7xl font-bold tracking-tight text-white mt-2">
+                Emerson <span class="text-blue-500">Moron</span> Rosa
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed pt-4">
+                Segurança, conformidade e otimização fiscal para o seu patrimônio.
+            </p>
+        </div>
+    </header>
+
+
+
+  <section class="card">
+     <h3 class="text-xl font-bold mb-3">Você é obrigado a declarar se:</h3>
+    <ul style="list-style: none; padding: 0;">
+      <li style="margin-bottom: 15px;">📌 Recebeu rendimentos tributáveis acima de <span class="valor">R$ 35.584,00</span>.</li>
+      <li style="margin-bottom: 15px;">📌 Recebeu rendimentos isentos/não tributáveis acima de <span class="valor">R$ 200.000,00</span>.</li>
+      <li style="margin-bottom: 15px;">📌 Ganho de capital na alienação de bens ou direitos.</li>
+      <li style="margin-bottom: 15px;">📌 Posse ou propriedade de bens (ex: imóvel) acima de <span class="valor">R$ 800.000,00</span>.</li>
+      <li style="margin-bottom: 15px;">📌 Passou à condição de residente no Brasil</li>
+    </ul>
+  </section>
+ <div class="flex justify-center my-12">
+  <a href="index.html" class="btn-voltar">
+    <i data-lucide="arrow-left"></i> Voltar para Início</a>
+</div>
+
+  <footer class="py-8 border-t border-slate-200 text-center text-slate-400 text-sm">
+    <p>&copy; 2026 
+        <a href="https://wa.me/551196612112" target="_blank" class="text-blue-500 hover:underline">
+            MoronTech
+        </a>. 
+        Todos os direitos reservados.
+    </p>
+    <p class="mt-2 font-medium text-slate-500 italic">
+        Consultoria Contábil e Gestão Fiscal de Excelência.
+    </p>
+</footer>
+
+
+  <script src="scripts.js"></script>
+</body>
+</html>

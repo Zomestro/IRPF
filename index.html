@@ -16,26 +16,44 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
     /* Forçando o efeito diretamente no cabeçalho para evitar conflitos */
+       
+    
     @keyframes blinking {
         0%, 49% { 
             color: #ffffff !important; 
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.3); 
         }
         50%, 100% { 
-            color: #eeff00 !important; 
+            color: ffffff !important; 
             text-shadow: 0 0 20px rgba(238, 255, 0, 0.8); 
         }
     }
 
     .blinking-text {
         animation: blinking 1.5s infinite !important;
-        color: #eeff00 !important; /* Cor inicial garantida */
+        color: #eeff00 !important;
+    }
+
+    /* Nova estilização para o Box Azul */
+    .link-box {
+        background-color: #2563eb; /* Azul equivalente ao blue-600 do Tailwind */
+        padding: 2rem;
+        border-radius: 1rem;
+        text-align: center;
+        margin-bottom: 4rem; /* Espaçamento para a section documentos */
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .link-box:hover {
+        transform: translateY(-5px);
+        background-color: #1d4ed8; /* Azul levemente mais escuro no hover */
     }
 </style>
 </head>
 <body class="bg-[#f8fafc] text-[#1e293b] font-['Inter'] antialiased">
 
-    <header class="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-[#0f172a] text-white px-6">
+    <header class="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-[#0f172a] text-white px-6">
         <div class="absolute inset-0 opacity-20">
             <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-transparent"></div>
             <div class="grid grid-cols-4 md:grid-cols-8 h-full w-full">
@@ -46,7 +64,7 @@
             </div>
         </div>
 
-        <div class="relative z-10 max-w-4xl w-full text-center space-y-6 pb-32">
+        <div class="relative z-10 max-w-4xl w-full text-center space-y-5 pb-24">
             <span class="inline-block px-4 py-1.5 bg-blue-500/10 border border-blue-400/20 text-blue-300 rounded-full text-sm md:text-lg font-medium tracking-wide uppercase mb-4">
                 Temporada de Ajuste Anual
             </span>
@@ -87,7 +105,13 @@
                 <p class="text-slate-600 leading-relaxed text-sm">Atendimento direto e focado na sua realidade financeira, bens e direitos no exterior ou renda variável.</p>
             </div>
         </section>
-
+     
+<!-- Box azul com link abaixo dos cards -->
+<div class="link-box">
+    <a href="page2.html" class="blinking-text">
+        Clique aqui e veja se você é obrigado a entregar a sua declaração
+    </a>
+</div>
         <section id="documentos" class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24 items-start">
             <div class="space-y-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-[#0f172a]">O que você precisa preparar?</h2>
@@ -132,7 +156,34 @@
                 <h3 class="text-2xl font-bold mb-6">Prazo Final</h3>
                 <div class="space-y-2 mb-8">
                     <p class="text-6xl md:text-7xl font-bold blinking-text">29/05</p>
-                    <p class="text-slate-400 text-sm">Mantenha-se atento ao calendário da RFB. Declarar cedo garante restituição prioritária.</p>
+                   <div class="countdown-wrapper">
+ 
+ <div id="countdown" class="countdown-container">
+  <!-- Prefixo -->
+  <span class="countdown-prefix-inline">Faltam</span>
+
+  <div class="time-box">
+    <span id="days" class="time-number">00</span>
+    <span class="time-label">dias</span>
+  </div>
+
+  <div class="time-box">
+    <span id="hours" class="time-number">00</span>
+    <span class="time-label">horas</span>
+  </div>
+
+  <div class="time-box">
+    <span id="minutes" class="time-number">00</span>
+    <span class="time-label">minutos</span>
+  </div>
+
+  <div class="time-box">
+    <span id="seconds" class="time-number">00</span>
+    <span class="time-label">segundos</span>
+  </div>
+</div>
+
+                  
                 </div>
                 <div class="p-6 bg-white/5 border border-white/10 rounded-2xl">
                     <p class="text-xs text-slate-400 uppercase tracking-widest mb-2 font-bold">Dica do Profissional</p>
@@ -183,12 +234,21 @@
     </main>
 
     <footer class="py-8 border-t border-slate-200 text-center text-slate-400 text-sm">
-        <p>&copy; 2026 MoronTech. Todos os direitos reservados.</p>
-        <p class="mt-2 font-medium text-slate-500 italic">Consultoria Contábil e Gestão Fiscal de Excelência.</p>
-    </footer>
+    <p>&copy; 2026 
+        <a href="https://wa.me/551196612112" target="_blank" class="text-blue-500 hover:underline">
+            MoronTech
+        </a>. 
+        Todos os direitos reservados.
+    </p>
+    <p class="mt-2 font-medium text-slate-500 italic">
+        Consultoria Contábil e Gestão Fiscal de Excelência.
+    </p>
+</footer>
+
 
     <script>
         lucide.createIcons();
     </script>
+    <script src="countdown.js"></script>
 </body>
 </html>
