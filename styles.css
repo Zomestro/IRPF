@@ -191,4 +191,13 @@ body {
   opacity: 0.9;
 }
 /* 🔒 Garante que o botão SEMPRE pisque em branco */
+/* ✅ GARANTE QUE O CONTADOR NÃO SEJA CORTADO */
+.countdown-container {
+  overflow-x: auto;
+}
+
+.card,
+.bg-slate-900 {
+  overflow: visible;
+}
 
