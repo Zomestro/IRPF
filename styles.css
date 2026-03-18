@@ -283,39 +283,57 @@ img {
   }
 }
 /* ================================
-   CONTADOR – CORREÇÃO MOBILE
+   CONTADOR – UMA LINHA SEMPRE
    ================================ */
 
-/* Desktop: mantém em uma linha */
 .countdown-container {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  flex-wrap: nowrap;          /* ✅ NUNCA quebra linha */
+  overflow-x: auto;           /* ✅ scroll no mobile */
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 4px;
 }
 
-/* 📱 Mobile */
-@media (max-width: 640px) {
-  .countdown-container {
-    flex-wrap: wrap;              /* ✅ permite quebra */
-    justify-content: center;      /* ✅ centraliza */
-  }
+/* remove barra visível */
+.countdown-container::-webkit-scrollbar {
+  display: none;
+}
 
-  .countdown-prefix-inline {
-    width: 100%;                  /* ✅ "Faltam" ocupa a linha inteira */
-    justify-content: center;
-    margin-bottom: 6px;
-  }
+/* Prefixo "Faltam" */
+.countdown-prefix-inline {
+  white-space: nowrap;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #cbd5f5;
+}
 
-  .time-box {
-    min-width: 64px;              /* ✅ menor no celular */
-    padding: 8px 10px;
-  }
+/* Quadros */
+.time-box {
+  min-width: 64px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  text-align: center;
+  white-space: nowrap;
+}
 
-  .time-number {
-    font-size: 1.4rem;            /* ✅ reduz tamanho */
-  }
+/* Números */
+.time-number {
+  font-size: 1.4rem;
+  font-weight: 800;
+  line-height: 1;
+}
 
-  .time-label {
-    font-size: 0.6rem;
-  }
+/* Labels */
+.time-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+}
+
+/* 🔴 Alerta 7 dias */
+.countdown-danger .time-number {
+  color: #ff2d2d;
 }
