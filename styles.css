@@ -282,3 +282,40 @@ img {
     max-width: 680px;
   }
 }
+/* ================================
+   CONTADOR – CORREÇÃO MOBILE
+   ================================ */
+
+/* Desktop: mantém em uma linha */
+.countdown-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 📱 Mobile */
+@media (max-width: 640px) {
+  .countdown-container {
+    flex-wrap: wrap;              /* ✅ permite quebra */
+    justify-content: center;      /* ✅ centraliza */
+  }
+
+  .countdown-prefix-inline {
+    width: 100%;                  /* ✅ "Faltam" ocupa a linha inteira */
+    justify-content: center;
+    margin-bottom: 6px;
+  }
+
+  .time-box {
+    min-width: 64px;              /* ✅ menor no celular */
+    padding: 8px 10px;
+  }
+
+  .time-number {
+    font-size: 1.4rem;            /* ✅ reduz tamanho */
+  }
+
+  .time-label {
+    font-size: 0.6rem;
+  }
+}
