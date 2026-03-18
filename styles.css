@@ -1,262 +1,180 @@
-/* Ajustes de Tipografia e Reset */
+/* ==================================================
+   RESET BÁSICO
+   ================================================== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    line-height: 1.6;
-    overflow-x: hidden; /* Evita scroll horizontal em celulares */
+  line-height: 1.6;
 }
 
-/* Animação do Prazo Final com Amarelo Vibrante */
-@keyframes blinking {
-    0%, 49% { 
-        color: #ffffff !important; 
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); 
-    }
-    50%, 100% { 
-        color: #eeff00 !important; 
-        text-shadow: 0 0 20px rgba(238, 255, 0, 1); 
-    }
-}
+/* ===============================
+   BOTÃO CTA – LINK PARA PAGE2
+   =============================== */
 
-.blinking-text {
-    animation: blinking 1.5s infinite;
-    font-family: sans-serif; /* Garante uma fonte de impacto */
-    letter-spacing: -2px;
-}
-
-/* Tabelas Responsivas (Caso use tabelas no futuro) */
-.table-container {
-    width: 100%;
-    overflow-x: auto;
-    margin: 20px 0;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 500px; /* Garante que a tabela não esmague */
-}
-
-/* Ajustes de Imagens */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Customização de scrollbar para navegadores modernos */
-::-webkit-scrollbar {
-    width: 8px;
-}
-::-webkit-scrollbar-track {
-    background: #001f3f;
-}
-::-webkit-scrollbar-thumb {
-    background: #00d4ff;
-    border-radius: 10px;
-}
-/* Estilização para o Box Azul Compacto */
-    .link-box-container {
-        text-align: center; /* Centraliza o box na página */
-        margin-bottom: 5rem; /* Espaçamento para a seção de baixo */
-    }
-
-   .link-box {
-    background-color: #001f3f; /* azul escuro */
-    text-align: center;
-    padding: 20px;
-    margin: 30px auto;
-    border-radius: 8px;
-    max-width: 600px; /* largura controlada */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-}
-
-
-
-/* BOTÃO DEFINITIVO DA PÁGINA 2 */
 .link-box a {
-  font-size: 1.3rem !important;
+  display: block;
+  width: 100%;
+
+  font-size: 1.6rem;              /* ✅ tamanho correto */
   font-weight: 700;
   line-height: 1.3;
-  color: #ffffff;
+
+  color: #ffffff !important;      /* ✅ FORÇA BRANCO */
+  animation: blink-white 1.5s infinite !important;
+
+  text-align: center;
   text-decoration: none;
-  display: inline-block;
+
+  white-space: normal;            /* ✅ não vaza no mobile */
+  word-break: break-word;
 }
 
-/* Ajuste extra para celular */
-@media (max-width: 768px) {
+/* 🖥 Desktop: mantém em uma linha */
+@media (min-width: 1024px) {
   .link-box a {
-    font-size: 2.6rem !important;
+    font-size: 1.8rem;            /* ✅ maior no desktop */
+    white-space: nowrap;
   }
 }
 
-/* =====================================
-   ANIMAÇÕES OFICIAIS DO SITE
-   ===================================== */
+.link-box a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.25;
 
-/* 🔵 Piscar branco — padrão */
+  color: #ffffff !important;
+  animation: blink-white 1.5s infinite !important;
+
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+
+  white-space: normal;      /* ✅ PERMITE QUEBRA */
+  word-break: break-word;   /* ✅ EVITA VAZAR */
+}
+
+/* 📱 Mobile */
+@media (max-width: 640px) {
+  .link-box a {
+    font-size: 1.2rem;        /* ✅ não fica gordo */
+  }
+}
+
+/* ==================================================
+   ANIMAÇÕES (ÚNICAS E OFICIAIS)
+   ================================================== */
 @keyframes blink-white {
   0%, 50%, 100% {
     color: #ffffff;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+    text-shadow: 0 0 8px rgba(255,255,255,0.6);
   }
   25%, 75% {
     color: #ffffff;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    text-shadow: 0 0 20px rgba(255,255,255,1);
   }
 }
 
-/* 🟡 Piscar amarelo — data limite */
 @keyframes blink-yellow {
   0%, 50%, 100% {
     color: #eeff00;
-    text-shadow: 0 0 8px rgba(238, 255, 0, 0.6);
+    text-shadow: 0 0 8px rgba(238,255,0,0.6);
   }
   25%, 75% {
     color: #eeff00;
-    text-shadow: 0 0 20px rgba(238, 255, 0, 1);
+    text-shadow: 0 0 20px rgba(238,255,0,1);
   }
 }
 
-/* Padrão do site */
 .blinking-text {
   animation: blink-white 1.5s infinite;
   color: #ffffff;
 }
 
-/* Exceção: prazo final */
 .prazo-final {
   animation: blink-yellow 1.5s infinite;
   color: #eeff00;
 }
 
-/* Botão do link da página 2 */
-.link-box a {
-  font-size: 2.4rem;
-  font-weight: 700;
-  line-height: 1.3;
-  text-decoration: none;
-  color: #ffffff;
-  display: inline-block;
-}
-
-/* =====================================
-   ANIMAÇÕES PADRÃO DO SITE
-   ===================================== */
-
-/* 🔵 Piscar em BRANCO (padrão do site) */
-@keyframes blink-white {
-  0%, 50%, 100% {
-    color: #ffffff;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
-  }
-  25%, 75% {
-    color: #ffffff;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 1);
-  }
-}
-
-/* 🟡 Piscar em AMARELO (data limite) */
-@keyframes blink-yellow {
-  0%, 50%, 100% {
-    color: #eeff00;
-    text-shadow: 0 0 8px rgba(238, 255, 0, 0.6);
-  }
-  25%, 75% {
-    color: #eeff00;
-    text-shadow: 0 0 20px rgba(238, 255, 0, 1);
-  }
-}
-/* =========================================
-   FORÇA BOTÃO DO LINK EM BRANCO (DEFINITIVO)
-   ========================================= */
-
-/* Mesmo com blinking-text e !important do HTML */
-.link-box a.blinking-text {
-  animation: blink-white 1.5s infinite !important;
-  color: #ffffff !important;
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.9) !important;
-}
-/* =====================================
-   CONTADOR REGRESSIVO – AJUSTE VISUAL
-   ===================================== */
-
-.countdown-wrapper {
-  margin: 16px 0 8px;
-}
-
-/* Palavra "Faltam" */
-.countdown-prefix {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 0.85rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #cbd5f5;
-  font-weight: 600;
-}
-
+/* ==================================================
+   CONTADOR REGRESSIVO
+   ================================================== */
 .countdown-container {
   display: flex;
   align-items: center;
-  gap: 10px;
-  flex-wrap: nowrap;        /* ✅ NÃO quebra linha */
-  overflow-x: auto;         /* ✅ segurança para telas muito pequenas */
-
+  gap: 8px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
 }
 
-/* Cada quadro */
+.countdown-container::-webkit-scrollbar {
+  display: none;
+}
+
+.countdown-prefix-inline {
+  white-space: nowrap;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #cbd5f5;
+}
+
 .time-box {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  padding: 10px 12px;
-  min-width: 78px;
+  min-width: 64px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
   text-align: center;
+  white-space: nowrap;
 }
 
-/* Número */
 .time-number {
-  display: block;
-  font-size: 1.9rem;   /* 🔽 AJUSTE DE TAMANHO */
+  font-size: 1.4rem;
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1;
   color: #ffffff;
 }
 
-/* Label */
 .time-label {
-  font-size: 0.7rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
   color: #cbd5f5;
 }
 
-/* 🔴 Modo alerta (7 dias ou menos) */
 .countdown-danger .time-number {
   color: #ff2d2d;
 }
-/* Prefixo inline do contador */
-.countdown-prefix-inline {
-  display: flex;
-  align-items: center;
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #cbd5f5;
-  margin-right: 10px;
+
+/* ==================================================
+   CARD (PAGE2)
+   ================================================== */
+.card {
+  background: var(--cinza);
+  border-left: 6px solid var(--azul);
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 720px;
+  margin: 40px auto;
 }
+
+/* ==================================================
+   BOTÃO VOLTAR
+   ================================================== */
 .btn-voltar {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   background: #0d2a4a;
-  color: white;
+  color: #ffffff;
   padding: 12px 24px;
   border-radius: 8px;
   text-decoration: none;
@@ -267,73 +185,5 @@ img {
 .btn-voltar:hover {
   opacity: 0.9;
 }
-.card {
-  background: var(--cinza);
-  border-left: 6px solid var(--azul);
-  padding: 25px;
-  border-radius: 12px;
+/* 🔒 Garante que o botão SEMPRE pisque em branco */
 
-  max-width: 720px;     /* ✅ largura controlada */
-  margin: 40px auto;    /* ✅ centraliza horizontalmente */
-}
-
-@media (min-width: 1024px) {
-  .card {
-    max-width: 680px;
-  }
-}
-/* ================================
-   CONTADOR – UMA LINHA SEMPRE
-   ================================ */
-
-.countdown-container {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: nowrap;          /* ✅ NUNCA quebra linha */
-  overflow-x: auto;           /* ✅ scroll no mobile */
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 4px;
-}
-
-/* remove barra visível */
-.countdown-container::-webkit-scrollbar {
-  display: none;
-}
-
-/* Prefixo "Faltam" */
-.countdown-prefix-inline {
-  white-space: nowrap;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #cbd5f5;
-}
-
-/* Quadros */
-.time-box {
-  min-width: 64px;
-  padding: 8px 10px;
-  border-radius: 8px;
-  text-align: center;
-  white-space: nowrap;
-}
-
-/* Números */
-.time-number {
-  font-size: 1.4rem;
-  font-weight: 800;
-  line-height: 1;
-}
-
-/* Labels */
-.time-label {
-  font-size: 0.6rem;
-  letter-spacing: 0.06em;
-}
-
-/* 🔴 Alerta 7 dias */
-.countdown-danger .time-number {
-  color: #ff2d2d;
-}
