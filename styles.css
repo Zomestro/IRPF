@@ -100,19 +100,24 @@ body {
   color: #eeff00;
 }
 
-/* ==================================================
-   CONTADOR REGRESSIVO
-   ================================================== */
+
+/* ===============================
+   CONTADOR – CORTE DEFINITIVAMENTE RESOLVIDO
+   =============================== */
+
 .countdown-container {
   display: flex;
   align-items: center;
   gap: 8px;
-  flex-wrap: nowrap;
-  overflow-x: auto;
+
+  flex-wrap: nowrap;          /* nunca quebra linha */
+  overflow-x: auto;           /* permite rolar */
   max-width: 100%;
+
   -webkit-overflow-scrolling: touch;
 }
 
+/* esconde barra no mobile */
 .countdown-container::-webkit-scrollbar {
   display: none;
 }
