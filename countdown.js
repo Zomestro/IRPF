@@ -1,39 +1,43 @@
-// ================================
-// CONTADOR REGRESSIVO – PRAZO FINAL
-// ================================
+document.addEventListener('DOMContentLoaded', () => {
+  const end = new Date(2026, 4, 29, 23, 59, 59);
 
-// Prazo final: 29/05/2026 às 23:59:59 (horário local)
-const deadline = new Date("2026-05-29T23:59:59");
+  const elDays  = document.getElementById('cd-days');
+  const elHours = document.getElementById('cd-hours');
+  const elMins  = document.getElementById('cd-mins');
+  const elSecs  = document.getElementById('cd-secs');
+  const grid    = document.getElementById('countdown');
 
-function updateCountdown() {
-  const now = new Date();
-  const diff = deadline.getTime() - now.getTime();
+  if (!elDays || !elHours || !elMins || !elSecs || !grid) return;
 
-  if (diff <= 0) {
-    document.getElementById("countdown").innerHTML =
-      "<strong>Prazo encerrado</strong>";
-    return;
+  const pad = n => String(n).padStart(2, '0');
+
+  function tick() {
+    const now = new Date();
+    let diff = end - now;
+
+    if (diff <= 0) {
+      elDays.textContent  = '00';
+      elHours.textContent = '00';
+      elMins.textContent  = '00';
+      elSecs.textContent  = '00';
+      return;
+    }
+
+    const days  = Math.floor(diff / 86400000);
+    const hours = Math.floor(diff / 3600000) % 24;
+    const mins  = Math.floor(diff / 60000) % 60;
+    const secs  = Math.floor(diff / 1000) % 60;
+
+    elDays.textContent  = days;
+    elHours.textContent = pad(hours);
+    elMins.textContent  = pad(mins);
+    elSecs.textContent  = pad(secs);
+
+    if (days <= 7) {
+      grid.classList.add('countdown-danger');
+    }
   }
 
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / (1000 * 60)) % 60);
-  const seconds = Math.floor((diff / 1000) % 60);
-
-  document.getElementById("days").textContent = String(days).padStart(2, "0");
-  document.getElementById("hours").textContent = String(hours).padStart(2, "0");
-  document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
-  document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
-
-  // 🔴 Modo alerta: 7 dias ou menos
-  const countdownEl = document.getElementById("countdown");
-  if (days <= 7) {
-    countdownEl.classList.add("countdown-danger");
-  } else {
-    countdownEl.classList.remove("countdown-danger");
-  }
-}
-
-// Inicializa
-updateCountdown();
-setInterval(updateCountdown, 1000);
+  tick();
+  setInterval(tick, 1000);
+});

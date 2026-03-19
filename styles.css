@@ -100,64 +100,59 @@ body {
   color: #eeff00;
 }
 
-
 /* ===============================
-   CONTADOR – CORTE DEFINITIVAMENTE RESOLVIDO
+   CONTADOR REGRESSIVO (DEFINITIVO)
    =============================== */
 
-.countdown-container {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  flex-wrap: nowrap;          /* nunca quebra linha */
-  overflow-x: auto;           /* permite rolar */
-  max-width: 100%;
-
-  -webkit-overflow-scrolling: touch;
-}
-
-/* esconde barra no mobile */
-.countdown-container::-webkit-scrollbar {
-  display: none;
-}
-
-.countdown-prefix-inline {
-  white-space: nowrap;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #cbd5f5;
-}
-
-.time-box {
-  min-width: 64px;
-  padding: 8px 10px;
-  border-radius: 8px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.2);
+.countdown-wrapper {
+  margin-top: 16px;
   text-align: center;
-  white-space: nowrap;
 }
 
-.time-number {
+.countdown-title {
+  font-size: 0.95rem;
+  letter-spacing: 0.25em;
+  font-weight: 700;
+  color: #cbd5f5;
+  margin-bottom: 8px;
+}
+
+/* GRID GARANTE QUE NÃO CORTE NO MOBILE */
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+/* Cada quadro */
+.countdown-box {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 8px 6px;
+}
+
+/* Número */
+.countdown-number {
   font-size: 1.4rem;
   font-weight: 800;
-  line-height: 1;
   color: #ffffff;
+  line-height: 1;
 }
 
-.time-label {
+/* Label */
+.countdown-label {
+  margin-top: 4px;
   font-size: 0.6rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  letter-spacing: 0.12em;
   color: #cbd5f5;
 }
 
-.countdown-danger .time-number {
+/* 🔴 Fica vermelho quando faltar 7 dias */
+.countdown-danger .countdown-number {
   color: #ff2d2d;
 }
+``
 
 /* ==================================================
    CARD (PAGE2)
@@ -201,3 +196,8 @@ body {
   overflow: visible;
 }
 
+.card-page2 {
+  max-width: 640px;
+  margin: 32px auto;
+  padding: 22px;
+}
